@@ -23,7 +23,7 @@ function queryFactory(ip, blacklist, socket, opts) {
       }, opts.port, opts.server, (err, res) => {
         if (err) return reject(err);
         if (!res) return resolve(false);
-        resolve(Boolean(res.answers.length));
+        resolve(res.answers);
       });
     });
   };
